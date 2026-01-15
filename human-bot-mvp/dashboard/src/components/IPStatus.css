@@ -1,0 +1,145 @@
+.ip-status {
+  width: 100%;
+}
+
+.ip-health-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.health-item {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.health-item.healthy {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.health-item.flagged {
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.health-item.blacklisted {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.health-label {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.health-value {
+  color: #f1f5f9;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.proxy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.proxy-item {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.proxy-item.healthy {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.proxy-item.flagged {
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.proxy-item.blacklisted {
+  border-color: rgba(239, 68, 68, 0.3);
+  opacity: 0.6;
+}
+
+.proxy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.proxy-url {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: #f1f5f9;
+  word-break: break-all;
+}
+
+.proxy-status {
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.proxy-status.active {
+  color: #10b981;
+}
+
+.proxy-status.inactive {
+  color: #ef4444;
+}
+
+.proxy-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.metric-label {
+  color: #94a3b8;
+}
+
+.metric-value {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+}
+
+.proxy-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.proxy-list::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 3px;
+}
+
+.proxy-list::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
+}
+
+.proxy-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}

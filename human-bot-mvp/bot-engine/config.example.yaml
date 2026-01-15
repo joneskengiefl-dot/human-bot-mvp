@@ -1,0 +1,75 @@
+# Human B.O.T Configuration File
+# Copy this to config.yaml and customize
+
+# Proxy/IP Configuration
+# MVP NOTE: Proxies are optional. If not configured or empty, sessions run without proxy.
+# For MVP demo without real proxies, leave proxies empty: []
+proxy:
+  # Proxy list (format: http://user:pass@host:port or http://host:port)
+  # Leave empty [] to run without proxies for MVP demo
+  proxies: []
+  # Example (uncomment to use):
+  # - http://proxy1.example.com:8080
+  # - http://proxy2.example.com:8080
+  # Rotation strategy: round_robin, random, least_used
+  rotation_strategy: round_robin
+  # Maximum uses per IP before rotation
+  max_uses_per_ip: 10
+
+# Session Configuration
+session:
+  # Number of concurrent sessions
+  max_concurrent: 100
+  # Session timeout (seconds)
+  timeout: 30
+
+# Behavior Patterns
+behavior:
+  # Search patterns
+  search_queries:
+    - "python programming"
+    - "web development"
+    - "data science"
+    - "machine learning"
+    - "software engineering"
+  # Click probability (0.0 to 1.0)
+  click_probability: 0.7
+  # Scroll probability
+  scroll_probability: 0.5
+  # Scroll depth (percentage of page)
+  scroll_depth:
+    min: 20
+    max: 80
+  # Dwell time range (seconds)
+  dwell_time:
+    min: 2
+    max: 10
+  # Click delay range (seconds)
+  click_delay:
+    min: 0.5
+    max: 2.0
+
+# Device Profiles
+devices:
+  - name: "Desktop Chrome"
+    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    viewport_width: 1920
+    viewport_height: 1080
+    device_type: "desktop"
+  - name: "Mobile Chrome"
+    user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
+    viewport_width: 375
+    viewport_height: 667
+    device_type: "mobile"
+
+# Logging Configuration
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  format: json  # json or text
+  file: logs/human_bot.log
+
+# Database Configuration
+database:
+  # SQLite for MVP (can be upgraded to PostgreSQL)
+  url: data/human_bot.db
+  echo: false  # Set to true for SQL query logging
